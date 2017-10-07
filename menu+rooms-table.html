@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- STYLE -->
+  <link href="style/style.css" rel="stylesheet" type="text/css"/>
+  <link rel='stylesheet' href='style/tooltips.css'>
+  <!-- SCRIPTS -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery.balloon.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!--<a href="#">Цени на оферти</a>-->
+  <a href="#" class="active">Стаи</a>
+  <a href="task-page.html">Проблеми</a>
+  <!--<a href="#">Оферти</a>
+  <a href="#">Резервации</a>-->
+</div>
+
+<div id="main">
+  <!-- MENU BUTTON -->
+  <span id="nav-bar-button" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  <!-- ROOMS TABLE -->
+  <div class="divTable">
+    <div class="divTableHeading">
+      <div class="divTableRow">
+        <div class="divTableHead">№</div>
+        <div class="divTableHead">Стая/Ден</div>
+        <div class="divTableHead"><p>22.07</p><p>Събота</p></div>
+        <div class="divTableHead"><p>23.07</p><p>Неделя</p></div>
+      </div>
+    </div>
+    <div class="divTableFoot">
+      <div class="divTableRow">
+        <div class="divTableCell"></div>
+        <div class="divTableCell"></div>
+        <div class="divTableCell"></div>
+        <div class="divTableCell">
+          <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="divTableBody">
+      <div class="divTableRow">
+        <div class="divTableCell index-cell">1</div>
+        <div class="divTableCell room-cell room-not-paid" title="(МА 1с) 4 (2С)">A23</div>
+        <div class="divTableCell">cell1_3</div>
+        <div class="divTableCell">cell1_4</div>
+      </div>
+      <div class="divTableRow">
+        <div class="divTableCell index-cell">2</div>
+        <div class="divTableCell room-cell room-paid" title="(МА 1с) 2+2 (1С 1ДР)">A24</div>
+        <div class="divTableCell">cell3_2</div>
+        <div class="divTableCell">cell4_2</div>
+      </div>
+      <div class="divTableRow">
+        <div class="divTableCell index-cell">3</div>
+        <div class="divTableCell room-cell room-paid" title="(МА 1с) 2+3 (1С 1ЕР 1ДР)">A25</div>
+        <div class="divTableCell">cell3_3</div>
+        <div class="divTableCell">cell4_3</div>
+      </div>
+      <div class="divTableRow">
+        <div class="divTableCell index-cell">4</div>
+        <div class="divTableCell room-cell room-not-paid" title="(МА 1с) 4+2 (1С 2Е 1ДР)">B4</div>
+        <div class="divTableCell">cell3_4</div>
+        <div class="divTableCell">cell4_4</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+//BALLOONS
+$(function() {
+  $('selectors').balloon(options);
+});
+
+$('.room-cell').balloon({
+  //contents: "Required",
+  position: "bottom",
+  offsetX: -20,
+  css: {
+      border: 'solid 1px white',
+      fontWeight: 'bold',
+      backgroundColor: 'rgb(239, 177, 177)',
+      color: '#000',
+      display: 'block'
+  }
+});
+
+//NAVIGATION
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+     
+</body>
+</html> 
